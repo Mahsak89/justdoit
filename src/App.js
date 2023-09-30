@@ -8,15 +8,43 @@ import SignInForm from "./pages/auth/SignInForm";
 import CreateCategoryForm from "./pages/categories/CreateCategoryForm";
 import CreateTaskForm from './pages/tasks/CreateTaskForm';
 import TaskPage from './pages/tasks/TaskPage';
+import TasksPage from "./pages/tasks/TasksPage";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 
 function App() {
+
+
+    const currentUser = useCurrentUser();
+    const profile_id = currentUser?.profile_id || "";
+
+
   return (
     <div className={styles.App}>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route
+            exact
+            path="/tasks"
+            render={() => (
+              <TasksPage
+                message="No results found."
+                filter={`owner__profile=${profile_id}&`}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/states"
+            render={() => (
+              <TasksPage
+                message="You have not completed any task yet."
+                filter={`states__owner__profile=${profile_id}&ordering=-states__created_at&`}
+              />
+            )}
+          />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />

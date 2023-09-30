@@ -30,15 +30,14 @@ function TaskPage() {
     handleMount();
   }, [id]);
   return (
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>categories</p>
+    <Row className="h-100 justify-content-md-center">
+      <col lg={4}></col>
+      <Col className="align-items-center" lg={8}>
+        
         <Task  {...task.results[0]} setTasks = {setTask} TaskPage />
         <Container className={appStyles.Content}>sth</Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        categories
-      </Col>
+     
     </Row>
   )
 }
