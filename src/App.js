@@ -6,6 +6,8 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import CreateCategoryForm from "./pages/categories/CreateCategoryForm";
+import CreateTaskForm from './pages/tasks/CreateTaskForm';
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />
+          <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />
+
 
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
