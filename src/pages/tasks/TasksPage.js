@@ -9,6 +9,8 @@ import appStyles from "../../App.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function TasksPage({ message, filter = "" }) {
   const [tasks, setTasks] = useState({ results: [] });
@@ -22,7 +24,7 @@ function TasksPage({ message, filter = "" }) {
         setTasks(data);
         setHasLoaded(true);
       } catch (err) {
-       console.log(err);
+        console.log(err);
       }
     };
 
@@ -37,10 +39,15 @@ function TasksPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {tasks.results.length ? (
-               tasks.results.map((task) => (
+                <InfiniteScroll
+                children={ tasks.results.map((task) => (
                     <Task key={task.id} {...task} setTasks={setTasks}  TasksPage />
-                ))
-          
+                ))}
+                dataLength={tasks.results.length}
+                loader='...'
+                hasMore={!!tasks.next}
+                next={() => fetchMoreData(tasks, setTasks)}
+              />
 
             ) : (
               <Container className={appStyles.Content}>
