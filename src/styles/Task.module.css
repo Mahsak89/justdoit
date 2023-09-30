@@ -1,4 +1,4 @@
-.Post {
+.Task {
     background-color: #ffffff;
     border: 1px solid #dadadf;
     border-radius: 2px;
@@ -6,19 +6,16 @@
     text-align: center;
   }
   
-  .Post figure,
-  h5 {
-    margin: 0 0;
+ 
+  
+  .square {
+    color: #616B35;
   }
   
-  .Heart {
-    color: #f85032;
+  .square:hover {
+    color: #DAE79A;
   }
   
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
+  .squareOutline:hover {
+    color: #616B35;
   }
