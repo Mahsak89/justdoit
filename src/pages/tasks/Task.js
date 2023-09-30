@@ -2,8 +2,10 @@ import React from 'react';
 import styles from "../../styles/Task.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card} from "react-bootstrap";
-import { Link} from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
+
 
 
 
@@ -30,6 +32,23 @@ const Task = (props) => {
     
       const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
+      const history = useHistory();
+
+      const handleEdit = () => {
+        history.push(`/tasks/${id}/edit`);
+      };
+    
+      const handleDelete = async () => {
+        try {
+          await axiosRes.delete(`/tasks/${id}/`);
+          history.goBack();
+        } catch (err) {
+         console.log(err);
+        }
+      };
+
+
+
 
       const handleLike = async () => {
         try {
@@ -59,7 +78,7 @@ const Task = (props) => {
             }),
           }));
         } catch (err) {
-         // console.log(err);
+          console.log(err);
         }
       };
     
@@ -87,10 +106,20 @@ const Task = (props) => {
                 ) }
             </span>
             {title &&<Link to={`/tasks/${id}`}> <p  className= "pt-3 ml-4">{title}</p></Link>}
-            {is_owner && TaskPage && "..."
+            {is_owner && TaskPage && (
+                <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )
             
             }
-            {is_owner && TasksPage && "..."
+            {is_owner && TasksPage && (
+                <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )
             }
           </div>
       
