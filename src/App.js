@@ -10,6 +10,8 @@ import CreateTaskForm from './pages/tasks/CreateTaskForm';
 import TaskPage from './pages/tasks/TaskPage';
 import TasksPage from "./pages/tasks/TasksPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import EditTaskForm from './pages/tasks/EditTaskPage';
+
 
 
 function App() {
@@ -50,6 +52,8 @@ function App() {
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />
           <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />
           <Route exact path="/tasks/:id" render={() => <TaskPage/>} />
+          <Route exact path="/tasks/:id/edit" render={() => <EditTaskForm/>} />
+
 
 
 
