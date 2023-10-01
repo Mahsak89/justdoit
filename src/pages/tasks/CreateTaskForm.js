@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import btnStyles from "../../styles/Button.module.css";
+
 
 
 function CreateTaskForm() {
@@ -50,7 +52,7 @@ function CreateTaskForm() {
 
   return (
     <div>
-      <h2>Create New Task</h2>
+      <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
         <Form.Group controlId="formTitle">
@@ -134,7 +136,9 @@ function CreateTaskForm() {
           {message}
         </Alert>
       ))}
-        <Button variant="primary" type="submit">
+        <Button 
+        className={`${btnStyles.Button}  ${btnStyles.Bright} mb-5`}
+        type="submit">
           Create Task
         </Button>
       </Form>

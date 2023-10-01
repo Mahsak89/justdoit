@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import btnStyles from "../../styles/Button.module.css";
+
 
 
 function EditTaskForm() {
@@ -67,7 +69,7 @@ function EditTaskForm() {
 
   return (
     <div>
-      <h2>Create New Task</h2>
+      <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
         <Form.Group controlId="formTitle">
@@ -151,7 +153,10 @@ function EditTaskForm() {
           {message}
         </Alert>
       ))}
-        <Button variant="primary" type="submit">
+        <Button 
+         className={`${btnStyles.Button}  ${btnStyles.Bright} mb-5`}
+
+         type="submit">
           Save
         </Button>
       </Form>

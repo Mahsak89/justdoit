@@ -3,6 +3,8 @@ import { Form, Button, Container, Row, Col,Alert } from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser} from "../../contexts/CurrentUserContext";
+import btnStyles from "../../styles/Button.module.css";
+
 
 import { Link} from "react-router-dom";
 
@@ -40,10 +42,10 @@ function CreateCategoryForm() {
 
       const loggedInContent = (
         <>
-           <h2>Create Category</h2>
+           <h2 className="text-center mb-5">Create Category</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="categoryName">
-                    <Form.Label>Category Name:</Form.Label>
+                    <Form.Label >Category Name:</Form.Label>
                     <Form.Control
                     type="text"
                     name="name"
@@ -56,7 +58,9 @@ function CreateCategoryForm() {
                     {message}
                     </Alert>
                  ))}
-                <Button variant="primary" type="submit">
+                <Button
+                className={`${btnStyles.Button}  ${btnStyles.Bright}`}
+                 type="submit">
                     Create
                 </Button>
             </Form>

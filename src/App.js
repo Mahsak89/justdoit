@@ -11,6 +11,8 @@ import TaskPage from './pages/tasks/TaskPage';
 import TasksPage from "./pages/tasks/TasksPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import EditTaskForm from './pages/tasks/EditTaskPage';
+import HomePage from "./pages/other/HomePage";
+import NotFound from "./pages/other/NotFound";
 
 
 
@@ -26,7 +28,7 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route exact path="/" render={() => <HomePage/>} />
           <Route
             exact
             path="/tasks"
@@ -57,7 +59,7 @@ function App() {
 
 
 
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound/>} />
         </Switch>
       </Container>
     </div>
