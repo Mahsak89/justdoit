@@ -71,7 +71,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={styles.NavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
+        to= "#"
       >
         <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
       </NavLink>
@@ -102,7 +102,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="45" />
+            <img src={logo} alt="logo" height="45" /> DO IT.
           </Navbar.Brand>
         </NavLink>
 

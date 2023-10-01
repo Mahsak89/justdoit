@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
+
 import Task from "./Task";
 
 import appStyles from "../../App.module.css";
@@ -34,8 +35,8 @@ function TasksPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>categories</p>
+      <Col className="py-2 p-0 p-lg-2 m-auto" lg={7} >
+        
         {hasLoaded ? (
           <>
             {tasks.results.length ? (
@@ -61,9 +62,7 @@ function TasksPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>categories</p>
-      </Col>
+      
     </Row>
   );
 }
