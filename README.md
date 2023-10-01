@@ -1,102 +1,242 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# DOIT
 
-Welcome,
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.  
-DO NOT use this template if you are using the Gitpod IDE. Use the following command instead:  
-`npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm`
+## Milestone Project 5 - front-end with drf and react
+![Desktop view](docs/image/responsiveui.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **31st August, 2023**
+* probiz is a fictional business consulting website that allows users to  book a service.
+  
+* This is my Milestone Project 5 submission for Code Institute's Diploma in Web Application Development course. DOIT is built using Django restframework and react. Technologies used include HTML, CSS, Javascript, Python,react,reactBootstrap.
+  
+## Live Project for front end
 
-## Codeanywhere Reminders
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+[View the live project here.](https://justdoit2023-2e442086298b.herokuapp.com/)
 
-To log into the Heroku toolbelt CLI:
+## Repository for react
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Find the project repository here.](https://github.com/Mahsak89/justdoit)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# Table of Contents
 
----
+## Contents
 
-Happy coding!
+- [DoIT](#DoIt)
+  - [Milestone Project 5 - FRONT-END Development](#milestone-project-5---FRONT-END-development)
+  - [Live Project](#live-project)
+  - [Repository](#repository)
+- [Table of Contents](#table-of-contents)
+  - [Contents](#contents)
+- [User Experience](#user-experience)
+  - [User stories](#user-stories)
+  - [Design](#design)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+- [Features](#features)
+  - [All Pages](#all-pages)
+    - [Header \& Navigation](#header--navigation)
+    - [Footer](#footer)
+    - [Messages](#messages)
+  - [Homepage](#homepage)
+  - [booking,editbooking](#bookingeditbooking)
+  - [Authentification Pages](#authentification-pages)
+  - [User pannel Page](#user-pannel-page)
+- [Future Features](#future-features)
+  - [Reviews Pages](#reviews-pages)
+    - [Users can view all their reviews](#users-can-view-all-their-reviews)
+  - [Add/ Edit/ Delete Reviews](#add-edit-delete-reviews)
+    - [Add Review Page](#add-review-page)
 
-# Getting Started with Create React App
+ 
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks \& Libraries](#frameworks--libraries)
+  - [Frameworks \& Libraries](#frameworks--libraries-1)
+  - [Storage \& Hosting](#storage--hosting)
+  - [IDE \& Version Control](#ide--version-control)
+  - [Other Tools](#other-tools)
+  - [Testing \& Code Validation](#testing--code-validation)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Code](#code)
+    - [Code Institute:](#code-institute)
+    - [Django:](#django)
+    - [Bootstrap:](#bootstrap)
+    - [Stack Overflow:](#stack-overflow)
+    - [W3Schools](#w3schools)
+    - [GeeksForGeeks](#geeksforgeeks)
+    - [Youtube youtube](#youtube-youtube)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# User Experience
 
-In the project directory, you can run:
+## User stories
 
-### `npm install`
 
-Installs the required npm packages.
+ 
 
-### `npm start`
+ 
+## Design
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Colour Scheme
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Typography
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## All Pages
 
-## Learn More
+- Responsive design
+- Semantic HTML
+- Custom CSS to give the website a cohesive and user-friendly appearance
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Components
+### hooks
+### Contexts
+### api
+### module.css
+### utils
+### app.js
+### Routing
+### infinit scrolling
+### data filtering
+### Edit and delete  things that the users are allowed
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### pages 
+## Authentification Pages
+- Register/ Log In/ Log Out
+## Categories
+## tasks
+## home
+## not found
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Future Features
 
-### Making a Progressive Web App
+## SET catefgory
+## have  more data filtering
+## users can view eac others progress without meddeling with each others data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+# Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [react](https://en.wikipedia.org/wiki/react)
+[reactBootstrap](https://en.wikipedia.org/wiki/reactbootstrap)
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+## Frameworks & Libraries
+
+- [Django](https://www.djangoproject.com/)
+  - This website is built using Django, a high-level Python web framework. Lonely House features multiple apps with model, view and template layers. I have also used Django to provide an admin view, create forms and test my website. Further features used include [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) for user authentification, Pillow for uploading images, and Crispy Forms.
+
+## Frameworks & Libraries
+
+- [react Bootstrap 4](https://react-bootstrap-v4.netlify.app/components) 
+  - I used bootstrap throughout the site to make it responsive. The website uses Bootstrap's Containers, Grid System, Flexbox and Spacing utilities. I sourced code from the Bootstrap documentation when building the Navbar, Image Carousels, Cards and Buttons.
+
+- [Google Fonts](https://fonts.google.com/)
+  - Fonts are imported from google fonts.
+
+## Storage & Hosting
+
+- [Heroku](https://id.heroku.com/login)
+  - Heroku is the deployment source I used for this project.
+
+- [Github](https://github.com/)
+  - Github was used to create and store the project repository.
+
+
+## IDE & Version Control
+
+- [Git](https://git-scm.com/)
+  - Git was used as a version control in the terminal.
+
+* [codeanywhere](https://app.codeanywhere.com/)
+  * codeanywhere was used to create my files and where I wrote the code.
+
+## Other Tools
+
+- ES7 snippet for more convinient
+- prettier formater for more convinient
+-  [coolors](https://coolors.co/) for more color pallete
+
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+  - Google Chrome's Dev Tools were used while building the project to test responsiveness and for debugging.
+- [pexels](https://www.pexels.com/)
+  - Unsplash was used to source the website imagery.
+
+- [ChatGPT](https://openai.com/blog/chatgpt/)
+  - OpenAI's ChatGPT was used in part to generate servicess for business consulting.
+
+## Testing & Code Validation
+
+The following tools were used for testing and code validation. You can see results in the Testing section of this README.
+
+- [W3C Markup Validation Service](https://validator.w3.org/)
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+
+# Testing
+
+- I have tested my app manually to check each page and function works also the was no problem according to  ESLint
+
+# Deployment
+* Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application that runs your API)
+* Select the “Deploy” tab in the dashboard
+* Scroll down to the bottom and then select “Deploy Branch”
+* Wait for your build to complete (you can click “view build log” to watch the process in a larger window)
+* When you see the message “deployed to Heroku” in the build log, click the “open app” button at the top of the page.
+
+# Credits
+
+## Code
+
+### Code Institute:
+  - I sourced the framework for this project from the Code Institute Boutique Ado walkthrough. I have customised my website wherever possible. My checkout, Stripe payments, webhooks and email verification are very similar to the walkthrough as I desired to focus more on making my website fit for my users goals, rather than adding any further checkout or payment functionality.
+
+### Django:
+  - I referred to the Django documentation whilst building my project. I found articles on [testing](https://docs.djangoproject.com/en/4.1/topics/testing/) and [making database queries](https://docs.djangoproject.com/en/4.1/topics/db/queries/) particularly useful.
+### DRF 
+
+### react Bootstrap:
+  - I have used Bootstrap classes throughout my project, including for layout utilities and cards. I sourced code from the Bootstrap documentation when building the navbar, image carousels, and dropdowns. These were sourced through the [ react Bootstrap documentation](https://react-bootstrap-v4.netlify.app/components/)
+
+
+### Stack Overflow: 
+  
+
+## Media
+- I used Pexels for all my images
+## Acknowledgements
+- Thank you to the Code Institute  Community for their encouragement and technical support.
+
+- Thank you to the tutors and staff at Code Institute for their support.
+- I used help to write my readme file from moments in code institute
+
+Please note this is a personal project. This website is purely for the sake of the developer's portfolio and not for public consumption.
+Mahsa Khoshnoud, 2023.
