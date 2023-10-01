@@ -45,7 +45,7 @@ function App() {
             render={() => (
               <TasksPage
                 message="You have not completed any task yet."
-                filter={`states__owner__profile=${profile_id}&ordering=-states__created_at&`}
+                filter={`owner__profile=${profile_id}&states__owner__profile=${profile_id}&ordering=-states__created_at&`}
               />
             )}
           />
