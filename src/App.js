@@ -13,6 +13,7 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import EditTaskForm from './pages/tasks/EditTaskPage';
 import HomePage from "./pages/other/HomePage";
 import NotFound from "./pages/other/NotFound";
+import ProfileDetail from "./pages/profiles/ProfileDetail";
 
 
 
@@ -55,6 +56,8 @@ function App() {
           <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />
           <Route exact path="/tasks/:id" render={() => <TaskPage/>} />
           <Route exact path="/tasks/:id/edit" render={() => <EditTaskForm/>} />
+          <Route exact path="/profiles/:id" render={() => <ProfileDetail />} />
+
 
 
 
