@@ -3,10 +3,11 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
-
+import { useRedirect } from "../../hooks/useRedirect";
 
 
 function CreateTaskForm() {
+    useRedirect("loggedOut");
 
     const [errors, setErrors] = useState({});
 
