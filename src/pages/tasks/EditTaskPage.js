@@ -29,7 +29,7 @@ function EditTaskForm() {
     
             is_owner ? setTaskData({ title, description, startdate, deadline, priority}) : history.push("/");
           } catch (err) {
-            console.log(err);
+            //console.log(err);
           }
         };
     

@@ -43,7 +43,7 @@ const Task = (props) => {
           await axiosRes.delete(`/tasks/${id}/`);
           history.goBack();
         } catch (err) {
-         console.log(err);
+         //console.log(err);
         }
       };
 
@@ -78,7 +78,7 @@ const Task = (props) => {
             }),
           }));
         } catch (err) {
-          console.log(err);
+         // console.log(err);
         }
       };
     

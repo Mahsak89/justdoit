@@ -12,8 +12,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function TasksPage({ message, filter = "" }) {
+  const currentUser = useCurrentUser();
+
   const [tasks, setTasks] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -25,13 +28,13 @@ function TasksPage({ message, filter = "" }) {
         setTasks(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 
     setHasLoaded(false);
     fetchTasks();
- }, [filter, pathname]);
+ }, [filter, pathname, currentUser]);
 
   return (
     <Row className="h-100">
