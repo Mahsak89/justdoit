@@ -4,6 +4,7 @@ import { Container, Card ,ListGroup,ListGroupItem, Row, Col} from 'react-bootstr
 import { useParams } from "react-router";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ProfileEditForm from './ProfileEditForm';
+import UserPasswordForm from './UserPasswordForm';
 
 
 
@@ -14,12 +15,15 @@ const ProfileDetail = () => {
 
   const [profile, setProfile] = useState(null);
   const { id } = useParams();
-    // Define a state to track whether the edit form should be displayed
-  const [showEditForm, setShowEditForm] = useState(false);
+  const [showEditProfileForm, setShowEditProfileForm] = useState(false);
+  const [showEditUserPasswordForm, setShowEditUserPasswordForm] = useState(false);
 
-    // Function to toggle the edit form display
-  const toggleEditForm = () => {
-      setShowEditForm(!showEditForm);
+  const toggleEditUserPasswordForm = () => {
+    setShowEditUserPasswordForm(!showEditUserPasswordForm);
+  }
+
+  const toggleEditProfileForm = () => {
+      setShowEditProfileForm(!showEditProfileForm);
     }
 
 
@@ -55,20 +59,23 @@ const ProfileDetail = () => {
                     </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush text-center">
-                    <ListGroupItem  onClick={toggleEditForm}>Edit profile
+                    <ListGroupItem  onClick={toggleEditProfileForm}>Edit profile
                     
                       
                    </ListGroupItem>
                     <ListGroupItem>Edit username</ListGroupItem>
-                    <ListGroupItem>Edit password</ListGroupItem>
+                    <ListGroupItem onClick={toggleEditUserPasswordForm}>Edit password</ListGroupItem>
                 </ListGroup>
             </Card>
 
             </Col>
             <Col md={8}>
 
-            {showEditForm && (
+            {showEditProfileForm && (
                 <ProfileEditForm />
+              ) }
+               {showEditUserPasswordForm && (
+                <UserPasswordForm/>
               ) }
              
             </Col>
