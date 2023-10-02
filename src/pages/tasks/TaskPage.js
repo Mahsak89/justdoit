@@ -7,9 +7,13 @@ import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Task from "./Task";
+import { useRedirect } from "../../hooks/useRedirect";
+
 
 
 function TaskPage() {
+ useRedirect("loggedOut");
+
 
   const { id } = useParams();
   const [task, setTask] = useState({ results: [] });
