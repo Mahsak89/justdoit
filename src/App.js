@@ -67,6 +67,26 @@ function App() {
               />
             )}
           />
+            <Route
+            exact
+            path="/tasks/priority/Medium"
+            render={() => (
+              <TasksPage
+                message="No results found."
+                filter={`owner__profile=${profile_id}&priority=Medium&`}
+              />
+            )}
+          />
+            <Route
+            exact
+            path="/tasks/priority/High"
+            render={() => (
+              <TasksPage
+                message="No results found."
+                filter={`owner__profile=${profile_id}&priority=High&`}
+              />
+            )}
+          />
         
           
 
