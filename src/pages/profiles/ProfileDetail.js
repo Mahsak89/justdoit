@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ProfileEditForm from './ProfileEditForm';
 import UserPasswordForm from './UserPasswordForm';
+import UsernameForm from './UsernameForm';
+import styles from '../../styles/ProfileDetail.module.css'
 
 
 
@@ -17,6 +19,8 @@ const ProfileDetail = () => {
   const { id } = useParams();
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
   const [showEditUserPasswordForm, setShowEditUserPasswordForm] = useState(false);
+  const [showEditUsernameForm, setShowEditUsernameForm] = useState(false);
+
 
   const toggleEditUserPasswordForm = () => {
     setShowEditUserPasswordForm(!showEditUserPasswordForm);
@@ -24,6 +28,10 @@ const ProfileDetail = () => {
 
   const toggleEditProfileForm = () => {
       setShowEditProfileForm(!showEditProfileForm);
+    }
+
+  const toggleEditUsernameForm = () => {
+    setShowEditUsernameForm(!showEditUsernameForm);
     }
 
 
@@ -59,24 +67,30 @@ const ProfileDetail = () => {
                     </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush text-center">
-                    <ListGroupItem  onClick={toggleEditProfileForm}>Edit profile
-                    
-                      
-                   </ListGroupItem>
-                    <ListGroupItem>Edit username</ListGroupItem>
+                    <ListGroupItem  onClick={toggleEditProfileForm}>Edit profile</ListGroupItem>
+                    <ListGroupItem onClick={toggleEditUsernameForm}>Edit username</ListGroupItem>
                     <ListGroupItem onClick={toggleEditUserPasswordForm}>Edit password</ListGroupItem>
                 </ListGroup>
             </Card>
 
             </Col>
             <Col md={8}>
+                <Container className={styles.Content}>
 
-            {showEditProfileForm && (
-                <ProfileEditForm />
-              ) }
-               {showEditUserPasswordForm && (
-                <UserPasswordForm/>
-              ) }
+                    {showEditProfileForm && (
+                        <ProfileEditForm />
+                    ) }
+                    {showEditUsernameForm && (
+                        <UsernameForm/>
+                    ) }
+                    {showEditUserPasswordForm && (
+                        <UserPasswordForm/>
+                    ) }
+                    
+                    
+                </Container>
+
+                
              
             </Col>
 
