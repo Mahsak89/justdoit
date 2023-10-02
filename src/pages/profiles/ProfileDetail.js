@@ -3,7 +3,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Container, Card ,ListGroup,ListGroupItem, Row, Col} from 'react-bootstrap';
 import { useParams } from "react-router";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Route, Switch } from "react-router-dom";
+import ProfileEditForm from './ProfileEditForm';
+
 
 
 
@@ -13,6 +14,13 @@ const ProfileDetail = () => {
 
   const [profile, setProfile] = useState(null);
   const { id } = useParams();
+    // Define a state to track whether the edit form should be displayed
+  const [showEditForm, setShowEditForm] = useState(false);
+
+    // Function to toggle the edit form display
+  const toggleEditForm = () => {
+      setShowEditForm(!showEditForm);
+    }
 
 
   useEffect(() => {
@@ -32,6 +40,8 @@ const ProfileDetail = () => {
     return <div>Loading...</div>;
   }
 
+  
+
   return (
     <Container>
         <Row>
@@ -45,7 +55,10 @@ const ProfileDetail = () => {
                     </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush text-center">
-                    <ListGroupItem>Edit profile</ListGroupItem>
+                    <ListGroupItem  onClick={toggleEditForm}>Edit profile
+                    
+                      
+                   </ListGroupItem>
                     <ListGroupItem>Edit username</ListGroupItem>
                     <ListGroupItem>Edit password</ListGroupItem>
                 </ListGroup>
@@ -53,10 +66,11 @@ const ProfileDetail = () => {
 
             </Col>
             <Col md={8}>
-                <Switch>
-               
-                </Switch>
 
+            {showEditForm && (
+                <ProfileEditForm />
+              ) }
+             
             </Col>
 
         </Row>
