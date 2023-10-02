@@ -13,6 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import SideBar from "../../components/SideBar";
 
 function TasksPage({ message, filter = "" }) {
   const currentUser = useCurrentUser();
@@ -38,7 +39,10 @@ function TasksPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 m-auto" lg={7} >
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+        <SideBar/>
+      </Col>
+      <Col className="py-2 p-0 p-lg-2 m-auto" lg={8} >
         
         {hasLoaded ? (
           <>

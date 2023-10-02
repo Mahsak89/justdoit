@@ -57,6 +57,17 @@ function App() {
           <Route exact path="/tasks/:id" render={() => <TaskPage/>} />
           <Route exact path="/tasks/:id/edit" render={() => <EditTaskForm/>} />
           <Route exact path="/profiles/:id" render={() => <ProfileDetail />} />
+          <Route
+            exact
+            path="/tasks/priority/Low"
+            render={() => (
+              <TasksPage
+                message="No results found."
+                filter={`owner__profile=${profile_id}&priority=Low&`}
+              />
+            )}
+          />
+        
           
 
 
