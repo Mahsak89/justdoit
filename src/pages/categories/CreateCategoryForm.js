@@ -30,8 +30,8 @@ function CreateCategoryForm() {
         
     
         try {
-          const { data } = await axiosReq.post("/categories/", formData);
-          history.push(`/categories/${data.id}`);
+          await axiosReq.post("/categories/", formData);
+          history.goBack();
         } catch (err) {
             // console.log(err);
              if (err.response?.status !== 401) {

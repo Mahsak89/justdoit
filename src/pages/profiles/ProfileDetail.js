@@ -41,7 +41,7 @@ const ProfileDetail = () => {
         const response =  await axiosReq.get(`/profiles/${id}`);
         setProfile(response.data);
       } catch (error) {
-        console.log(error);
+       // console.log(error);
       }
     }
 

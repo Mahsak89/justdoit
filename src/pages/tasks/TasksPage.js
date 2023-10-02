@@ -42,10 +42,10 @@ function TasksPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      <Col md={4} className="d-lg-block p-0 p-lg-2">
         <SideBar/>
       </Col>
-      <Col className="py-2 p-0 p-lg-2 m-auto" lg={8} >
+      <Col className="py-2 p-0 p-lg-2 m-auto" md={8} >
         
         {hasLoaded ? (
           <>

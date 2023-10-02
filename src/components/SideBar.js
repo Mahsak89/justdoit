@@ -14,7 +14,8 @@ const SideBar = () => {
   return (
     <Row>
         <Col>
-            <Card>
+           <Row>
+            <Card style={{ width: '80%' }} className="text-center">
                 <ListGroup className="list-group-flush">
                     <ListGroupItem><Link to="/tasks" >tasks</Link></ListGroupItem>
                     <ListGroupItem><Link to="/states" >completed</Link></ListGroupItem>
@@ -23,12 +24,15 @@ const SideBar = () => {
                     <ListGroupItem><Link to="/tasks/priority/Medium">Medium</Link></ListGroupItem>
                     <ListGroupItem><Link to="/tasks/priority/High">High</Link></ListGroupItem>
                     <ListGroupItem>categories</ListGroupItem>
-                </ListGroup>
-                <CategorieList  
+                    <CategorieList  
                      message="No results found."
                     filter={`owner__id=${profile_id}&`}
                     />
+                </ListGroup>
+                
             </Card>
+            </Row>
+            
         </Col>
     </Row>
   )

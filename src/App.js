@@ -53,6 +53,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />
+          
 
           <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />
           <Route exact path="/tasks/:id" render={() => <TaskPage/>} />
@@ -88,6 +89,15 @@ function App() {
               />
             )}
           />
+          <Route 
+          exact path="/categories/:id"
+          render={() =>(
+            <TasksPage
+              message="No results found."
+              filter={`owner__profile=${profile_id}&category=category&`}
+            />
+          )}
+           />
         
           
 

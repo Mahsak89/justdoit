@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -6,10 +6,14 @@ import btnStyles from "../../styles/Button.module.css";
 import { useRedirect } from "../../hooks/useRedirect";
 
 
+
+
 function CreateTaskForm() {
     useRedirect("loggedOut");
+  
 
     const [errors, setErrors] = useState({});
+
 
     const [taskData, setTaskData] = useState({
         title: '',
@@ -20,6 +24,7 @@ function CreateTaskForm() {
       });
       const { title, description, startdate, deadline, priority} = taskData;
       const history = useHistory();
+      
 
       const handleChange = (event) => {
         setTaskData({
@@ -56,6 +61,8 @@ function CreateTaskForm() {
       <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
+      
+
         <Form.Group controlId="formTitle">
           <Form.Label>Title:</Form.Label>
           <Form.Control

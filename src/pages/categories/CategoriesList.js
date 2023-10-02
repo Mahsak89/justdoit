@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
-import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from 'react-router-dom'
 
 
@@ -46,12 +43,12 @@ function CategorieList({ message, filter = "" }) {
  }, [filter, pathname, currentUser]);
 
   return (
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 m-auto"  >
+    
+      <>
         
         {hasLoaded ? (
           <>
-          <ListGroup className="list-group-flush">
+          
             {categories.results.length ? (
                 <InfiniteScroll
                 children={ categories.results.map((category) => (
@@ -71,16 +68,16 @@ function CategorieList({ message, filter = "" }) {
                <p>{message}</p>
               </Container>
             )}
-             </ListGroup>
+           
           </>
         ) : (
           <Container className={appStyles.Content}>
             <p>loading...</p>
           </Container>
         )}
-      </Col>
       
-    </Row>
+      </>
+   
   );
 }
 
