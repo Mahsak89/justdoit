@@ -8,7 +8,7 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 const SideBar = () => {
     
     const currentUser = useCurrentUser();
-    const profile_id = currentUser?.profile_id || "";
+    //const profile_id = currentUser?.profile_id || "";
 
 
   return (
@@ -26,7 +26,7 @@ const SideBar = () => {
                     <ListGroupItem>categories</ListGroupItem>
                     <CategorieList  
                      message="No results found."
-                    filter={`owner__id=${profile_id}&`}
+                    filter={`owner__id=${ currentUser.pk}&`}
                     />
                 </ListGroup>
                 
