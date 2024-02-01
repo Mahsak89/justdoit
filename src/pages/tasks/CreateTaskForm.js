@@ -1,9 +1,12 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
+
 
 
 
@@ -14,6 +17,9 @@ function CreateTaskForm() {
 
     const [errors, setErrors] = useState({});
 
+    const [categories, setCategories] = useState({ results: [] });
+
+
 
     const [taskData, setTaskData] = useState({
         title: '',
@@ -21,9 +27,26 @@ function CreateTaskForm() {
         startdate: '',
         deadline: '',
         priority: '',
+        category: '',
       });
-      const { title, description, startdate, deadline, priority} = taskData;
+      const { title, description, startdate, deadline, priority, category} = taskData;
       const history = useHistory();
+      const currentUser = useCurrentUser();
+
+      useEffect(() => {
+        const fetchCategories = async () => {
+        try {
+        const { data } = await axiosReq.get(`/categories/?owner__id=${currentUser.pk}`);
+            setCategories(data);
+            console.log(data)
+            setTaskData((prevData) => ({ ...prevData, categories: data.results }));
+        } catch (err) {
+            console.error("Error fetching user categories:", err);
+        }
+        };
+
+        fetchCategories();
+      }, [currentUser]);
       
 
       const handleChange = (event) => {
@@ -42,6 +65,7 @@ function CreateTaskForm() {
         formData.append("startdate", startdate);
         formData.append("deadline", deadline);
         formData.append("priority", priority);
+        formData.append("category", category);
         
     
         try {
@@ -61,6 +85,35 @@ function CreateTaskForm() {
       <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
+
+        <Form.Group controlId="formCategory">
+            <Form.Label>Category:</Form.Label>
+            <Form.Control
+            as="select"
+            name="category"
+            value={category}
+            onChange={handleChange}
+            >
+            {categories.results.length > 0 &&
+                categories.results.map((category) => (
+                <option key={category.id} value={category.id}>
+                    {category.name}
+                </option>
+                ))}
+            </Form.Control>
+         </Form.Group>
+       
+          
+
+
+
+
+
+        {errors?.category?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+          {message}
+          </Alert>
+        ))}
       
 
         <Form.Group controlId="formTitle">
