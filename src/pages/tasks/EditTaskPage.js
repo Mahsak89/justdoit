@@ -3,12 +3,16 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 
 
 
 function EditTaskForm() {
 
     const [errors, setErrors] = useState({});
+      const [categories, setCategories] = useState({ results: [] });
+
 
     const [taskData, setTaskData] = useState({
         title: '',
@@ -16,25 +20,37 @@ function EditTaskForm() {
         startdate: '',
         deadline: '',
         priority: '',
+        category: '',
+
       });
-      const { title, description, startdate, deadline, priority} = taskData;
+      const { title, description, startdate, deadline, priority, category} = taskData;
       const history = useHistory();
       const { id } = useParams();
+      const currentUser = useCurrentUser();
+
 
       useEffect(() => {
         const handleMount = async () => {
           try {
             const { data } = await axiosReq.get(`/tasks/${id}/`);
-            const { title, description, startdate, deadline, priority, is_owner } = data;
-    
-            is_owner ? setTaskData({ title, description, startdate, deadline, priority}) : history.push("/");
+            const { title, description, startdate, deadline, priority, is_owner, category  } = data;
+             if (is_owner) {
+                setTaskData({ title, description, startdate, deadline, priority, category });
+                // Fetch user categories and set them in state
+                const { data: userCategories } = await axiosReq.get(`/categories/?owner__id=${currentUser.pk}`);
+                setCategories(userCategories.results);
+            } else {
+                history.push("/");
+            }
+
+
           } catch (err) {
             //console.log(err);
           }
         };
     
         handleMount();
-      }, [history, id]);
+      }, [history, id, currentUser]);
 
 
       const handleChange = (event) => {
@@ -53,6 +69,8 @@ function EditTaskForm() {
         formData.append("startdate", startdate);
         formData.append("deadline", deadline);
         formData.append("priority", priority);
+        formData.append("category", category);
+
         
     
         try {
@@ -72,6 +90,28 @@ function EditTaskForm() {
       <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
+
+        <Form.Group controlId="formCategory">
+          <Form.Label>Category:</Form.Label>
+          <Form.Control
+            as="select"
+            name="category"
+            value={category}
+            onChange={handleChange}
+          >
+            {categories.length > 0 &&
+              categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+          </Form.Control>
+        </Form.Group>
+        {errors?.category?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
         <Form.Group controlId="formTitle">
           <Form.Label>Title:</Form.Label>
           <Form.Control
