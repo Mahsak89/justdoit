@@ -41,7 +41,7 @@ function CategorieList({ message, filter = "" }) {
     
       setCategories((prevCategories) => ({
         ...prevCategories,
-        results: prevCategories.results.filter((category) => category.id !== categoryId),
+        results: prevCategories.results.filter((category) => category.id !== id),
       }));
     } catch (err) {
       // Handle error
@@ -74,7 +74,7 @@ function CategorieList({ message, filter = "" }) {
             {categories.results.length ? (
                 <InfiniteScroll
                 children={ categories.results.map((category) => (
-                    <ListGroupItem key={category.id}>
+                    <ListGroupItem key={category.id} className="d-flex justify-content-between align-items-center">
                         <Link to={`/categories/${category.id}`}>{category.name}</Link>
                         <MoreDropdown
                             handleEdit={() => handleEditCategory(category.id)}
