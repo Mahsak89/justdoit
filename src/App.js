@@ -14,6 +14,8 @@ import EditTaskForm from './pages/tasks/EditTaskPage';
 import HomePage from "./pages/other/HomePage";
 import NotFound from "./pages/other/NotFound";
 import ProfileDetail from "./pages/profiles/ProfileDetail";
+import EditCategoryForm from './pages/categories/EditCategoryForm';
+
 
 
 
@@ -53,6 +55,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />
+          <Route exact path="/categories/:id/edit" render={() => <EditCategoryForm />} />
           
 
           <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />

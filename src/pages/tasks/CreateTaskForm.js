@@ -82,7 +82,7 @@ function CreateTaskForm() {
 
   return (
     <div>
-      <h2 className="text-center mb-5">Edit Task</h2>
+      <h2 className="text-center mb-5">Create New Task</h2>
 
       <Form onSubmit={handleSubmit} >
 
