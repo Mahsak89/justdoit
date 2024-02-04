@@ -26,13 +26,17 @@ function TasksPage({ message, filter = "" }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    console.log("Filter:", filter);  // Check if filter is received
     const fetchTasks = async () => {
       try {
         const { data } = await axiosReq.get(`/tasks/?${filter}`);
+        console.log("Tasks:", data);  // Log the tasks data
+
         setTasks(data);
         setHasLoaded(true);
       } catch (err) {
-        //console.log(err);
+        console.error("Error fetching tasks:", err);
+
       }
     };
 

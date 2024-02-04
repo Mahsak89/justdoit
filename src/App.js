@@ -95,6 +95,7 @@ function App() {
           <Route 
           exact path="/categories/:id"
           render={({ match }) =>(
+           
             <TasksPage
               message="No results found."
               filter={`owner__profile=${profile_id}&category=${match.params.id}&`}

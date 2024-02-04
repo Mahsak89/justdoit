@@ -20,7 +20,7 @@ function EditTaskForm() {
         startdate: '',
         deadline: '',
         priority: '',
-        category: '',
+        category: 'DefaultCategory',
 
       });
       const { title, description, startdate, deadline, priority, category} = taskData;
@@ -99,6 +99,8 @@ function EditTaskForm() {
             value={category}
             onChange={handleChange}
           >
+            <option value="DefaultCategory" disabled>Select a category</option>
+
             {categories.length > 0 &&
               categories.map((category) => (
                 <option key={category.id} value={category.id}>

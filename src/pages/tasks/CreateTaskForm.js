@@ -27,7 +27,7 @@ function CreateTaskForm() {
         startdate: '',
         deadline: '',
         priority: '',
-        category: '',
+        category:'DefaultCategory',
       });
       const { title, description, startdate, deadline, priority, category} = taskData;
       const history = useHistory();
@@ -94,6 +94,7 @@ function CreateTaskForm() {
             value={category}
             onChange={handleChange}
             >
+            <option value="DefaultCategory" disabled>Select a category</option>
             {categories.results.length > 0 &&
                 categories.results.map((category) => (
                 <option key={category.id} value={category.id}>
