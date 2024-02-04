@@ -50,7 +50,7 @@ const Task = (props) => {
 
 
 
-      const handleLike = async () => {
+      const handleComplete = async () => {
         try {
           const { data } = await axiosRes.post("/states/", { task: id });
           setTasks((prevTasks) => ({
@@ -66,7 +66,7 @@ const Task = (props) => {
         }
       };
     
-      const handleUnlike = async () => {
+      const handleUncomplete = async () => {
         try {
           await axiosRes.delete(`/states/${state_id}/`);
           setTasks((prevTasks) => ({
@@ -96,11 +96,11 @@ const Task = (props) => {
           <div className="d-flex align-items-center ">
             <span>
                 { state_id ? (
-                <span  onClick={handleUnlike} >
+                <span  onClick={handleUncomplete} >
                     <i className={`fas fa-square ${styles.square}`} />
                 </span>
                 ) :  (
-                <span   onClick={handleLike}>
+                <span   onClick={handleComplete}>
                     <i className={`far fa-square ${styles.squareOutline}`} />
                 </span>
                 ) }
