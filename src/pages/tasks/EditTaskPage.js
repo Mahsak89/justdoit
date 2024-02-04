@@ -19,7 +19,7 @@ function EditTaskForm() {
         description: '',
         startdate: '',
         deadline: '',
-        priority: '',
+        priority: 'Low',
         category: 'DefaultCategory',
 
       });
@@ -185,6 +185,7 @@ function EditTaskForm() {
             onChange={handleChange}
           
           >
+            <option value="Low" disabled>Select a priority</option>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
