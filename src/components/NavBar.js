@@ -38,7 +38,16 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add task
     </NavLink>
   );
-
+  /*const addTagIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/tags/create"
+    >
+      <i className="far fa-plus-square"></i>Add tag
+    </NavLink>
+  );
+*/
   const addCategoryIcon = (
     <NavLink
       className={styles.NavLink}
@@ -68,6 +77,7 @@ const NavBar = () => {
       </NavLink>
       
       {addTaskIcon}
+      {/*{addTagIcon}*/}
       
       { addCategoryIcon}
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>

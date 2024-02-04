@@ -47,7 +47,7 @@ function HomePage() {
       </Col>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>Why do we needd task to do list ?</h1><br/>
+          <h1 className={styles.Header}>Why do we need task to do list ?</h1><br/>
 
 
           <p>Tasks provide structure and purpose to our day. They guide us towards our goals and keep us focused on what's important. By tackling tasks, we make progress, whether it's in our personal or professional lives. Each completed task is a small victory, boosting our confidence and motivation.</p>
