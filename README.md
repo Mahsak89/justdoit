@@ -317,7 +317,85 @@ The following tools were used for testing and code validation. You can see resul
 
 # Testing
 
-- I have tested my app manually to check each page and function works also the was no problem according to  ESLint
+- I have tested my app manually to check each page and function works also there was no problem according to  ESLint
+and iv got console.log()to check the amount of my varaibles and checked their correctness
+
+ - fixed the errror of the app accepting wrong input as deadline it will no longer accept but it wont show the warning.
+
+ - fixed the errror of not filtering and showing tasks by categories
+
+ - fixed some wrong spellig and vocabs.
+ 
+ - fixed  my categories list created by the user in sidebar
+
+
+
+
+- homepage 
+![Image](./src/assets/reactapp/homepage.png)
+
+- signup/in work ok
+
+![Image](./src/assets/reactapp/signup.png)
+
+![Image](./src/assets/reactapp/notmatchedpass.png)
+
+- priority
+
+fixed the previous error that i couldnt create low priorities task 
+
+![Image](./src/assets/reactapp/fixedprorityoption.png)
+
+not found task by empty priority
+
+ ![Image](./src/assets/reactapp/notfoundtaskpriority.png)    
+
+ filter by priority
+
+ ![Image](./src/assets/reactapp/filterbypriority.png)  
+
+ - categories
+
+ sidebar categories list
+
+ ![Image](./src/assets/reactapp/categories.png)  
+
+ create category
+
+ ![Image](./src/assets/reactapp/createcategory.png)  
+
+ edit category
+ ![Image](./src/assets/reactapp/editcat.png)  
+
+ fixed the error of showing my task by categories filter 
+
+ ![Image](./src/assets/reactapp/filterbycategories.png)  
+
+ - tasks
+ shows all tasks
+  ![Image](./src/assets/reactapp/alltasks.png) 
+
+ edit Task
+
+ ![Image](./src/assets/reactapp/editTask.png)  
+ create a new task
+ ![Image](./src/assets/reactapp/createtask.png)  
+
+
+ - completed
+  ![Image](./src/assets/reactapp/completed.png)  
+
+  - profiles
+
+  shoe the error msg of unmatched password 
+
+  ![Image](./src/assets/reactapp/erorrmsg.png)  
+
+
+
+  
+
+
 
 # Deployment
 * Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application that runs your API)
