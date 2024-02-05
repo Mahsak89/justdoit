@@ -7,7 +7,6 @@ import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import CreateCategoryForm from "./pages/categories/CreateCategoryForm";
 import CreateTaskForm from './pages/tasks/CreateTaskForm';
-import CreateTagForm from './pages/tags/CreateTagForm';
 
 import TaskPage from './pages/tasks/TaskPage';
 import TasksPage from "./pages/tasks/TasksPage";
@@ -58,7 +57,6 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/categories/create" render={() => <CreateCategoryForm/> } />
           <Route exact path="/categories/:id/edit" render={() => <EditCategoryForm />} />
-          <Route exact path="/tags/create" render={() => <CreateTagForm/> } />
 
 
           <Route exact path="/tasks/create" render={() => <CreateTaskForm/> } />
