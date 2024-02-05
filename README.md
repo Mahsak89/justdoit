@@ -266,15 +266,34 @@ the TasksPage component provides a structured layout for displaying tasks with a
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 ## Frameworks & Libraries
 
-- [Django](https://www.djangoproject.com/)
+### [Django](https://www.djangoproject.com/)
   - This website is built using Django, a high-level Python web framework. Lonely House features multiple apps with model, view and template layers. I have also used Django to provide an admin view, create forms and test my website. Further features used include [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) for user authentification, Pillow for uploading images, and Crispy Forms.
 
-## Frameworks & Libraries
+### [React](https://reactjs.org/)
 
-- [react Bootstrap 4](https://react-bootstrap-v4.netlify.app/components) 
-  - I used bootstrap throughout the site to make it responsive. The website uses Bootstrap's Containers, Grid System, Flexbox and Spacing utilities. I sourced code from the Bootstrap documentation when building the Navbar, Image Carousels, Cards and Buttons.
+- React is a JavaScript library for building user interfaces.
 
-- [Google Fonts](https://fonts.google.com/)
+### [React Bootstrap](https://react-bootstrap.github.io/)
+
+- React Bootstrap is a popular Bootstrap framework rebuilt for React, providing responsive UI components.
+ I used bootstrap throughout the site to make it responsive. The website uses Bootstrap's Containers, Grid System, Flexbox and Spacing utilities. I sourced code from the Bootstrap documentation when building the Navbar, Image Carousels, Cards and Buttons.
+
+### [React Router](https://reactrouter.com/)
+
+- React Router is a standard library for routing in React applications.
+
+### [useState and useEffect Hooks](https://reactjs.org/docs/hooks-state.html) 
+
+- `useState` and `useEffect` are React hooks used for managing state and side effects in functional components.
+
+### [Axios](https://axios-http.com/)
+
+- Axios is a promise-based HTTP client for the browser and Node.js, making it easy to send asynchronous HTTP requests.
+
+
+  
+
+### [Google Fonts](https://fonts.google.com/)
   - Fonts are imported from google fonts.
 
 ## Storage & Hosting
