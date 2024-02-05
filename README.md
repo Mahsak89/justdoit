@@ -144,45 +144,107 @@ This component creates a responsive navigation bar with conditional rendering ba
 The SideBar component serves as a navigation sidebar, providing links to different pages and dynamically rendering categories based on the current user.
 
 ### hooks
+- UseClickOutsideToggle
+
+This hook is useful for scenarios where you want to toggle a state, such as a dropdown menu or modal, based on clicks outside a particular DOM element. Components using this hook can manage the expanded state and use the ref to specify which DOM element's clicks should trigger the toggle behavior.
+
+- UseRedirect
+This hook is designed for scenarios where you want to handle redirection based on the user's authentication status. It can be used in components or routes to manage the navigation flow. The redirection logic is based on whether the user is logged in or logged out, and the hook makes use of Axios for token refreshing.
+
 ### Contexts
+- CurrentUserContext
+
+This context provider and associated contexts enable the management of the current user's state and provide hooks for accessing and updating this information in various components within the application. The axios interceptors handle token refreshing for secured routes.
 ### api
-### module.css
+
+- axiosDefaults
+
+These configurations offer flexibility and customization for making HTTP requests in your application. Adjust the base URL, content type, and credentials settings as needed for your specific use cases.
+
 ### utils
-### app.js
-### Routing
-### infinit scrolling
+
+These functions seem to be part of a larger system that deals with authentication using JWTs and handling paginated data fetching. The fetchMoreData function is particularly useful in scenarios where additional data needs to be loaded as the user scrolls or interacts with a paginated interface
+
 ### data filtering
 - completed
 - tasks owner
 - tasks priority
+- tasks categories
 
 
 
-### Edit and delete  things that the users are allowed
 
 ### pages 
-## Authentification Pages
-- Register/ Log In/ Log Out
-## Categories
-- creat
-- list all
-## tasks
-- create
-- edit
-- delete
-- retrieve
-- task component
-## home
-## not found
+
+- signup /in
+
+The SignIn/upForm component combines form elements, error handling, and authentication logic to create a user-friendly sign-in page. 
+
+
+- CategoriesList
+
+the CategorieList component renders a list of categories, provides infinite scrolling for additional data, and includes options for editing and deleting categories. The component uses various hooks and utility functions to manage state and handle navigation.
+
+- edit/createCategoryForm
+
+These components provides a user-friendly form for creating and editing a category, with conditional rendering based on the user's authentication status. If the user is logged in, the category creation form is displayed; otherwise, a message prompts the user to sign in. The form handles category creation and displays error messages if any.
+
+
+- homepage 
+
+shown as the first page
+
+- not found page
+
+when the page urls doesnt exist
+
+
+
+- pofiledetail
+
+ this component combines the display of a user's profile details with forms for editing the profile, username, and password. The visibility of each form is controlled by state flags, and the component fetches the user's profile data based on the provided id parameter.
+
+
+- profile edit form
+
+this component provides a form for users to edit their profile details, including a bio and an optional profile image. The form includes conditional rendering based on screen size for better responsiveness.
+
+- UsernameForm
+
+the UsernameForm component allows users to change their username, displaying any validation errors and providing buttons to save or cancel the changes.
+
+- UserPasswordForm
+
+The UserPasswordForm component allows users to change their password, displaying any validation errors and providing buttons to save or cancel the changes. 
+
+- CreateTaskForm
+
+The CreateTaskForm component allows users to create a new task by filling in various details such as title, description, start date, deadline, priority, and category.
+
+- EditTaskForm
+
+The EditTaskForm component allows users to edit an existing task by modifying its details such as title, description, start date, deadline, priority, and category.
+
+- Task
+
+The Task component encapsulates the UI and functionality related to displaying and interacting with a single task in the application.
+
+- TaskPage
+
+the TaskPage component fetches and displays the details of a single task based on the task ID from the URL parameters.
+
+- TasksPage
+
+the TasksPage component provides a structured layout for displaying tasks with a sidebar. The task list supports infinite scrolling, and the tasks are fetched from the server based on the provided filter.
+
 
 
 
 
 # Future Features
 
-- SET catefgory
 - have  more data filtering
-- users can view eac others progress without meddeling with each others data
+- buid a habit tracker
 
 
 
