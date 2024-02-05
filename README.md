@@ -127,6 +127,22 @@ Designed by Colophon Foundry, Jonny Pinhorn, Indian Type Foundry
 - Custom CSS to give the website a cohesive and user-friendly appearance
 
 ### Components
+- Avatar
+
+ the Avatar component simplifies the process of displaying user avatars in a React application, offering flexibility in terms of image source, size, and additional accompanying text.
+
+- MoreDropdown
+
+This component can be used in a parent component, and you can provide handleEdit and handleDelete functions as props to define the behavior when the corresponding actions are triggered in the dropdown.
+
+- Navbar
+
+This component creates a responsive navigation bar with conditional rendering based on the user's authentication status. The dropdown menu appears when the user clicks on the toggle button, and it closes when clicking outside the dropdown. The design incorporates Font Awesome icons and custom styling for a polished user interface.
+ 
+- sidebar
+
+The SideBar component serves as a navigation sidebar, providing links to different pages and dynamically rendering categories based on the current user.
+
 ### hooks
 ### Contexts
 ### api
