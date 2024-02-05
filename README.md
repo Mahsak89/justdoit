@@ -11,7 +11,7 @@
 ## Live Project for front end
 
 
-[View the live project here.](https://justdoit2023-2e442086298b.herokuapp.com/)
+[View the live project here.](https://taskstodo-5c8dcdc02268.herokuapp.com/)
 
 ## Repository for react
 
@@ -397,7 +397,18 @@ not found task by empty priority
 
 
 
-# Deployment
+# Deploymen
+
+* Remove all the console.logs from the application
+ : Add the Heroku deployment commands in terminal
+
+* In package.json file, in the “scripts” section, add the following prebuild command:
+"heroku-prebuild": "npm install -g serve",
+This will install a package needed to serve our single page application on heroku
+* Add a Procfile at the root of the project with the following web command:
+web: serve -s build
+*  In your workspace, ensure you have committed and pushed all of your code to github.
+
 * Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application that runs your API)
 * Select the “Deploy” tab in the dashboard
 * Scroll down to the bottom and then select “Deploy Branch”
